@@ -8,7 +8,7 @@ export function Home() {
 
             <div className={homeStyle.title}>
                 <button className={`btn ${homeStyle.backgroundButton}`}>
-                    <NavLink className="nav-link" to="/courses" >
+                    <NavLink className="nav-link" to="/home/courses" >
                         Visualizza i corsi
                     </NavLink>
                 </button>
