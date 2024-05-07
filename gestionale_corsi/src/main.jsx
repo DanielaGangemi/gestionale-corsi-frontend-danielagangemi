@@ -9,11 +9,19 @@ import { Courses } from './pages/Courses/Courses';
 import { NotFound } from './pages/NotFound/NotFound';
 import { Layout } from "./components/Layouts/MainLayout/Layout";
 import { Course } from "./components/Course/Course";
+import { Login } from "./pages/Login/Login"
+
+
+
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
     path: "/",
+    element: <Login />
+  },
+  {
+    element: <Layout />,
+    path: "/home",
     children: [
       {
         path: "",
@@ -36,11 +44,11 @@ const router = createBrowserRouter([
 
   },
 
-
   {
-    path: "*",
+    path: "*", // Definisci il percorso di default per la pagina non trovata
     element: <NotFound />
   }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
