@@ -12,11 +12,21 @@ export function LoginForm() {
         password: ""
     })
 
+    const [flag, setFlag] = useState(false)
+
     const navigateTo = useNavigate();
 
     const handleChange = (event) => {
 
         const { name, value } = event.target;
+
+        console.log(value)
+
+        if (value == "") {
+
+            setFlag(false)
+
+        }
 
         setLoginForm({ ...loginForm, [name]: value })
 
@@ -41,7 +51,7 @@ export function LoginForm() {
             // controllo credenziali
             if (response == 0) {
 
-                alert("Credenziali non esistenti")
+                setFlag(true);
 
             } else {
 
@@ -52,7 +62,8 @@ export function LoginForm() {
         } else {
 
             // condizioni dettate dalla regex non rispettate
-            alert("Email o password non rispettano i criteri")
+            // alert("Email o password non rispettano i criteri")
+            setFlag(true);
 
         }
 
@@ -61,7 +72,7 @@ export function LoginForm() {
     return (
         <>
 
-            <div className="card" style={{ width: "25rem" }}>
+            <div className="card" style={{ width: "25rem", boxShadow: "0rem 1rem 10rem -4rem darkblue" }}>
 
                 <div className="card-body">
                     <div className={`${loginFormStyle.title}`}>
@@ -74,15 +85,20 @@ export function LoginForm() {
                                 <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={loginForm.email} onChange={handleChange} />
 
+
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                 <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={loginForm.password} onChange={handleChange} />
+
                             </div>
                             <div className="mb-3">
                                 <p className={loginFormStyle.registrationLabel}>Non sei registrato? <NavLink className={`nav-link ${loginFormStyle.register}`} to={`./registration`} >Registrati adesso</NavLink></p>
                             </div>
                             <button type="submit" className="btn btn-primary">Invio</button>
+
+                            {flag == true ? <div className={loginFormStyle.errorMessage}><p  >Credenziali non valide</p></div> : ""}
+
                         </form>
                     </div>
                 </div>
