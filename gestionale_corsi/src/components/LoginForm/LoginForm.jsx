@@ -4,6 +4,7 @@ import { login } from "../../services/RESTservice";
 import { validateEmail, validatePassword } from "../../services/ValidationService";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { setLoginCookie } from "../../services/CookieService";
 
 export function LoginForm() {
 
@@ -19,8 +20,6 @@ export function LoginForm() {
     const handleChange = (event) => {
 
         const { name, value } = event.target;
-
-        console.log(value)
 
         if (value == "") {
 
@@ -54,8 +53,12 @@ export function LoginForm() {
                 setFlag(true);
 
             } else {
-
-                navigateTo("/home")
+               
+                // salviamo il token nel cookie
+                // console.log(response.token)
+                // document.cookie = JSON.stringify(response);
+                setLoginCookie(response)
+                // navigateTo("/home")
 
             }
 
