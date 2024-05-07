@@ -16,9 +16,9 @@ export function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <div className="navbar-nav">
 
-                            <NavLink className="nav-link" to="/" >Home</NavLink>
+                            <NavLink className="nav-link" to="" >Home</NavLink>
 
-                            <NavLink className="nav-link" to="courses" >Courses</NavLink>
+                            <NavLink className="nav-link" to="courses" >Corsi</NavLink>
 {/* 
 
                             <NavLink className="nav-link" >Pricing</NavLink> */}
