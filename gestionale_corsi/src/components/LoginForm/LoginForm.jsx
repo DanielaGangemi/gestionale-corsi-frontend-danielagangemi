@@ -3,6 +3,7 @@ import { useState } from "react";
 import { login } from "../../services/RESTservice";
 import { validateEmail, validatePassword } from "../../services/ValidationService";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function LoginForm() {
 
@@ -40,7 +41,7 @@ export function LoginForm() {
             // controllo credenziali
             if (response == 0) {
 
-                alert("Credenziali non valide")
+                alert("Credenziali non esistenti")
 
             } else {
 
@@ -77,6 +78,9 @@ export function LoginForm() {
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                                 <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={loginForm.password} onChange={handleChange} />
+                            </div>
+                            <div className="mb-3">
+                                <p className={loginFormStyle.registrationLabel}>Non sei registrato? <NavLink className={`nav-link ${loginFormStyle.register}`} to={`./registration`} >Registrati adesso</NavLink></p>
                             </div>
                             <button type="submit" className="btn btn-primary">Invio</button>
                         </form>
