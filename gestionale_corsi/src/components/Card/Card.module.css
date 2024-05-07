@@ -1,0 +1,27 @@
+.cardStyle {
+    width: 22rem;
+    margin-right: 2rem;
+    height: 35rem;
+    overflow-y: auto;
+}
+
+.cardTitle {
+    background-color: #1c0099;
+    color: white;
+}
+
+.alignButton {
+    text-align: center;
+    background-color: white;
+}
+
+.backgroundButton{
+    background-color: #1c0099;
+    color: white;
+}
+
+.backgroundButton:hover{
+    border: 1px solid #1c0099;
+    background-color: white;
+    color: #1c0099;
+}

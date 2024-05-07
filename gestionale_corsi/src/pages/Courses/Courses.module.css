@@ -1,0 +1,15 @@
+.card {
+
+    display: flex;
+    margin-top: 5rem;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+.title{
+    text-align: center;
+    margin-top: 2rem;
+    color: #1c0099;
+}
+

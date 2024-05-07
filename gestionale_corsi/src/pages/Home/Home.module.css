@@ -1,0 +1,16 @@
+.title {
+    text-align: center;
+    margin-top: 2rem;
+    color: #1c0099;
+}
+
+.backgroundButton{
+    background-color: #1c0099;
+    color: white;
+}
+
+.backgroundButton:hover{
+    border: 1px solid #1c0099;
+    background-color: white;
+    color: #1c0099;
+}

@@ -1,0 +1,18 @@
+.footer {
+    /* background-color: #333333; */
+    background-color: #1c0099 ;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 18px;
+    height: 4rem;
+    text-align: center;
+}
+
+.copyright {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 1%;
+}
