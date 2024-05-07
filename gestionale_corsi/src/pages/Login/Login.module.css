@@ -3,4 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: no-repeat center center fixed;
+    background-image: linear-gradient(blue, #00d8ff);
+    
 }
