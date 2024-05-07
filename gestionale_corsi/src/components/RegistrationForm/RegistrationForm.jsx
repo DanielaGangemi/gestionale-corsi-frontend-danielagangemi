@@ -14,6 +14,8 @@ export function RegistrationForm() {
         roleId: 1
     })
 
+    const [flag, setFlag] = useState(false)
+
     const navigateTo = useNavigate();
 
     const handleChange = (event) => {
@@ -44,7 +46,8 @@ export function RegistrationForm() {
             // controllare se non è andata a buon fine
             if (response == 0) {
 
-                alert("Utente gia' registrato")
+                // alert("Utente gia' registrato")
+                setFlag(true);
 
             } else {
 
@@ -55,7 +58,8 @@ export function RegistrationForm() {
 
         } else {
 
-            alert("Dati inseriti non validi")
+            // alert("Dati inseriti non validi")
+            setFlag(true);
 
         }
 
@@ -64,7 +68,7 @@ export function RegistrationForm() {
 
     return (
         <>
-            <div className="card" style={{ width: "25rem" }}>
+            <div className="card" style={{ width: "25rem", boxShadow: "0rem 1rem 10rem -4rem darkblue" }}>
 
                 <div className="card-body">
                     <div className={`${registrationFormStyle.title}`}>
@@ -112,6 +116,8 @@ export function RegistrationForm() {
 
 
                             <button type="submit" className="btn btn-primary">Registrati</button>
+                            {flag == true ? <div className={registrationFormStyle.errorMessage}><p  >Credenziali non valide</p></div> : ""}
+
                         </form>
                     </div>
                 </div>
