@@ -6,6 +6,7 @@ import { useState } from "react";
 import { logout } from "../../services/RESTservice";
 import { useNavigate } from "react-router-dom";
 import { deleteCookies } from "../../services/CookieService";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
 
@@ -45,34 +46,47 @@ export function Navbar() {
         <>
             <nav className={`navbar navbar-expand-lg ${navbarStyle.background}`} data-bs-theme="dark">
                 <div className="container-fluid">
-                    <a className="navbar-brand" >
+                    <Link className="navbar-brand" to="" >
                         Gestionale Corsi
-                    </a>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                        <div className="navbar-nav">
 
-                            <NavLink className="nav-link" to="" >Home</NavLink>
 
-                            {rolesList.includes("Admin") && !rolesList.includes("Docente") ? <NavLink className="nav-link" to="courses" >Corsi</NavLink> : <></>}
+                        {rolesList.includes("Docente") && rolesList.includes("Admin") ?
+                            <div className="navbar-nav">
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Utenti
+                                    </a>
+                                    <ul className="dropdown-menu">
+                                        <li><Link className="dropdown-item" to="">Profilo</Link></li>
+                                        <li><Link className="dropdown-item" to="">Visualizza tutti gli utenti</Link></li>
 
-                            {rolesList.includes("Docente") && rolesList.includes("Admin") ?
+                                    </ul>
+                                </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Corsi
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><NavLink className="dropdown-item" to="courses">I miei corsi</NavLink></li>
-                                        <li><NavLink className="dropdown-item" to="courses">Visualizza tutti i corsi</NavLink></li>
+                                        <li><Link className="dropdown-item" to="">I miei corsi</Link></li>
+                                        <li><Link className="dropdown-item" to="courses">Visualizza tutti i corsi</Link></li>
 
                                     </ul>
-                                </li> : ""}
+                                </li>
+                            </div> : ""}
 
-                            {!rolesList.includes("Admin") && rolesList.includes("Docente") ? <NavLink className="nav-link" to="courses" >I miei corsi</NavLink> : <></>}
+                        {!rolesList.includes("Admin") && rolesList.includes("Docente") ?
+                            <div className="navbar-nav">
+                                <Link className="nav-link" to="courses" >Profilo</Link>
+                                <Link className="nav-link" to="courses" >Corsi</Link>
+                            </div>
+                            : <></>}
 
-                        </div>
+                        { }
 
                         <div className="ms-auto">
                             <button className="btn btn-light" onClick={handleLogout}>Logout</button>
