@@ -25,7 +25,7 @@ export function setClaimCookie(token) {
 
 }
 
-export function getClaimCookie(){
+export function getClaimCookie() {
 
     const userData = {
         name: Cookies.get("name"),
@@ -37,4 +37,20 @@ export function getClaimCookie(){
 
     return userData;
 
+}
+
+export function getTokenCookie() {
+
+    return Cookies.get("token");
+
+}
+
+export function deleteCookies() {
+
+    Cookies.remove("name");
+    Cookies.remove("surname");
+    Cookies.remove("email");
+    Cookies.remove("roles");
+    Cookies.remove("token");
+    
 }
