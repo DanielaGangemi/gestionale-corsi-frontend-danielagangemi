@@ -38,7 +38,11 @@ export function Card(props) {
                         <button className={`btn ${cardStyle.backgroundButton}`} value="Visualizza">
                             <NavLink className="nav-link" to={`./course/${props.IdCorso}`} >
                                 Visualizza dettagli
-
+                            </NavLink>
+                        </button>
+                        <button className={`btn ${cardStyle.backgroundButtonDelete}`} value="Visualizza">
+                            <NavLink className="nav-link" to={`./delete/${props.IdCorso}`} >
+                                <i className="bi bi-trash"></i>
                             </NavLink>
                         </button>
                     </div>

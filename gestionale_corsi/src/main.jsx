@@ -18,6 +18,7 @@ import { UpdateUser } from "./pages/UpdateUser/UpdateUser"
 import { Users } from "./pages/Users/Users"
 import { DeleteUser } from "./pages/DeleteUser/DeleteUser"
 import { AddCorso } from "./pages/AddCorso/AddCorso"
+import { DeleteCourse } from "./pages/DeleteCourse/DeleteCourse"
 
 
 
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
           {
             path: "course/:id",
             element: <ProtectedRoute><Course /></ProtectedRoute>
-          }
+          },
+          {
+            path: "delete/:id",
+            element: <ProtectedRoute><DeleteCourse /></ProtectedRoute>
+          },
         ]
       },
       {

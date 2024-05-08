@@ -25,3 +25,14 @@
     background-color: white;
     color: #1c0099;
 }
+
+.backgroundButtonDelete{
+    background-color: brown;
+    color: white;
+}
+
+.backgroundButtonDelete:hover{
+    border: 1px solid brown;
+    background-color: white;
+    color: brown;
+}

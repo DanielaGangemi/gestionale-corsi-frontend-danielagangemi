@@ -219,6 +219,29 @@ export async function insertCourse(body) {
 
 }
 
+// DELETE COURSE
+export async function deleteCourse(id) {
+
+    const token = getTokenCookie();
+
+    const response = await fetch(`http://localhost:8080/api/course/${id}`, {
+        mode: "cors",
+        method: "DELETE",
+        headers: {
+            'Authorization': 'Bearer ' + token
+        },
+    })
+
+    if (response.status != 200) {
+
+        return 1;
+
+    }
+
+    return 0;
+
+
+}
 
 
 // ---- CATEGORIES ----
