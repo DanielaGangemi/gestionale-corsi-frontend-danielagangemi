@@ -37,7 +37,8 @@ export function Card(props) {
                                 <div className={`${cardStyle.alignButton}`}>
                                     <button className={`btn btn-primary `}>
                                         <NavLink className="nav-link" to={`./course/${props.IdCorso}`} >
-                                            Visualizza dettagli
+                                            {/* Visualizza dettagli */}
+                                            <i className="bi bi-eye"></i>
                                         </NavLink>
                                     </button>
                                     <button className={`btn btn-danger`} style={{marginLeft: "1rem"}}>

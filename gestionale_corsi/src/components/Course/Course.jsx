@@ -32,13 +32,19 @@ export function Course() {
 
     return (
         <>
-            <div className={courseStyle.margin}>
-                <div className={courseStyle.title}>
-                    <h1>{course.courseName}</h1>
+            <div className="row" style={{ marginTop: "10rem" }}>
+                <div className="col-md-7 mx-auto">
+                    <div className="card">
+                        <div className={courseStyle.margin}>
+                            <div className={courseStyle.title}>
+                                <h1>{course.courseName}</h1>
+                            </div>
+                            <p>Durata: {course.duration} ore</p>
+                            <h5>{course.shortDescrition}</h5>
+                            <p>{course.longDescription}</p>
+                        </div>
+                    </div>
                 </div>
-                <p>Durata: {course.duration} ore</p>
-                <h5>{course.shortDescrition}</h5>
-                <p>{course.longDescription}</p>
             </div>
         </>
     );
