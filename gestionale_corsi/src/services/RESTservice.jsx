@@ -101,6 +101,27 @@ export async function getAllUsers() {
 
 }
 
+// UPDATE
+export async function updateUser(user) {
+
+    const response = await fetch("http://localhost:8080/api/user/update", {
+        mode: "cors",
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user)
+
+    })
+
+    if (response.status !== 200) {
+        return 0;
+    }
+
+    return 1;
+
+}
+
 // ------ CORSI -------
 
 // FIND ALL CORSI
@@ -122,7 +143,11 @@ export async function listCourses() {
 
     // console.log(await response.json())
 
-    return await response.json();
+    if (response.status != 200) {
+        return 0; // internal server error
+    }
+
+    return 1;
 
 }
 
