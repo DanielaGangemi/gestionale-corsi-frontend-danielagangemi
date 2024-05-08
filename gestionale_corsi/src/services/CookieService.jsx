@@ -54,3 +54,9 @@ export function deleteCookies() {
     Cookies.remove("token");
     
 }
+
+export function getEmailCookie(){
+
+    return Cookies.get("email");
+    
+}

@@ -13,6 +13,8 @@ export function Navbar() {
     const { user } = useContext(AuthContext);
     let rolesList = [];
 
+    // console.log(user)
+
     if (user.roles != undefined) {
 
         rolesList = user.roles.split(",")
@@ -72,8 +74,8 @@ export function Navbar() {
                                         Corsi
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><Link className="dropdown-item" to="">I miei corsi</Link></li>
-                                        <li><Link className="dropdown-item" to="courses">Visualizza tutti i corsi</Link></li>
+                                        <li><Link className="dropdown-item" to="courses/1">I miei corsi</Link></li>
+                                        <li><Link className="dropdown-item" to="courses/2">Visualizza tutti i corsi</Link></li>
 
                                     </ul>
                                 </li>

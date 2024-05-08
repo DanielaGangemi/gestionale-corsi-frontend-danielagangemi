@@ -65,7 +65,26 @@ export async function logout() {
 
 }
 
-// CORSI
+// FIND USER BY EMAIL
+export async function getUserByEmail(email) {
+
+
+    const response = await fetch(`http://localhost:8080/api/user/showuser?email=${email}`, {
+        mode: "cors",
+        method: "GET",
+
+    })
+
+    if (response.status != 200) {
+        return 1;
+    }
+
+    return await response.json();
+
+}
+
+
+// ------ CORSI -------
 
 // FIND ALL CORSI
 export async function listCourses() {
@@ -90,9 +109,9 @@ export async function listCourses() {
 
 }
 
-export async function getCourse(id){
+export async function getCourse(id) {
 
-    
+
     const token = getTokenCookie();
 
     const response = await fetch(`http://localhost:8080/api/course/${id}`, {
