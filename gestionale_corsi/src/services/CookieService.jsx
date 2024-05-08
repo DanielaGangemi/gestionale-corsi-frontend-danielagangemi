@@ -24,3 +24,17 @@ export function setClaimCookie(token) {
     Cookies.set("roles", roles);
 
 }
+
+export function getClaimCookie(){
+
+    const userData = {
+        name: Cookies.get("name"),
+        surname: Cookies.get("surname"),
+        email: Cookies.get("email"),
+        roles: Cookies.get("roles"),
+        token: Cookies.get("token")
+    }
+
+    return userData;
+
+}
