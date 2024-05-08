@@ -99,6 +99,8 @@ export async function getAllUsers() {
 
     return await response.json();
 
+
+
 }
 
 // UPDATE
@@ -122,6 +124,26 @@ export async function updateUser(user) {
 
 }
 
+// DELETE USER
+export async function deleteUser(email) {
+
+    const response = await fetch(`http://localhost:8080/api/user/delete/${email}`, {
+        mode: "cors",
+        method: "DELETE"
+    })
+
+    if (response.status != 200) {
+
+        return 1;
+
+    }
+
+    return 0;
+
+
+}
+
+
 // ------ CORSI -------
 
 // FIND ALL CORSI
@@ -141,13 +163,8 @@ export async function listCourses() {
         return 0; // internal server error
     }
 
-    // console.log(await response.json())
+    return await response.json();
 
-    if (response.status != 200) {
-        return 0; // internal server error
-    }
-
-    return 1;
 
 }
 

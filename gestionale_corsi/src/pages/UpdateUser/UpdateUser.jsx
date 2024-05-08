@@ -43,11 +43,7 @@ export function UpdateUser() {
 
                 let u = await getUserByEmail(email)
 
-                console.log(u)
-
                 setUser(u)
-
-                console.log(user)
 
                 u.roleList.forEach(role => {
 
@@ -68,8 +64,6 @@ export function UpdateUser() {
                     roleId: roles
 
                 })
-
-                console.log(updateForm)
 
 
             }
@@ -185,8 +179,6 @@ export function UpdateUser() {
 
             <div className="row" style={{ marginTop: "10rem" }}>
                 <div className="col-md-7 mx-auto">
-
-
 
                     <div className="card">
                         <div className="card-body">

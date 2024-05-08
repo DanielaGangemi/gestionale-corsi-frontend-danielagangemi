@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { getEmailCookie } from "../../services/CookieService";
 
 export function UserTable(props) {
 
     const listRoles = props.Roles.map(item => item.roleType);
+    const userEmail = getEmailCookie();
+
+
+
 
     return (
         <>
@@ -23,9 +29,13 @@ export function UserTable(props) {
                             <i className="bi bi-pencil"></i>
                         </Link>
                     </button>
-                    <button className="btn btn-danger">
-                        <i className="bi bi-trash"></i>
-                    </button>
+                    {userEmail == props.Email ? <></> :
+                        <button className="btn btn-danger">
+                            <Link to={`delete/${props.Email}`}>
+                                <i className="bi bi-trash"></i>
+                            </Link>
+                        </button>
+                    }
                 </td>
             </tr>
 

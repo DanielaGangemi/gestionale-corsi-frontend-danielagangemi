@@ -16,6 +16,7 @@ import { Profile } from "./pages/Profile/Profile"
 import { Registration } from "./pages/Registration/Registration"
 import { UpdateUser } from "./pages/UpdateUser/UpdateUser"
 import { Users } from "./pages/Users/Users"
+import { DeleteUser } from "./pages/DeleteUser/DeleteUser"
 
 
 
@@ -58,11 +59,12 @@ const router = createBrowserRouter([
             element: <ProtectedRoute><Users /></ProtectedRoute>
           },
           {
-
             path: "update/:email",
             element: <ProtectedRoute>< UpdateUser /></ProtectedRoute>
-
-
+          },
+          {
+            path: "delete/:email",
+            element: <ProtectedRoute>< DeleteUser /></ProtectedRoute>
           }
         ]
 
