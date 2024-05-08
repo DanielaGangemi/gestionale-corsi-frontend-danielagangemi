@@ -17,6 +17,7 @@ import { Registration } from "./pages/Registration/Registration"
 import { UpdateUser } from "./pages/UpdateUser/UpdateUser"
 import { Users } from "./pages/Users/Users"
 import { DeleteUser } from "./pages/DeleteUser/DeleteUser"
+import { AddCorso } from "./pages/AddCorso/AddCorso"
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             element: <ProtectedRoute><Course /></ProtectedRoute>
           }
         ]
+      },
+      {
+        path: "addcourse/",
+        element: <ProtectedRoute><AddCorso /></ProtectedRoute>
       },
       {
         path: "users",

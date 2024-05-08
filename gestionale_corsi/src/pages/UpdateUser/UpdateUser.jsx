@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { getClaimCookie } from "../../services/CookieService";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { getUserByEmail } from "../../services/RESTservice";
+import { getUserByEmail, updateUser } from "../../services/RESTservice";
 import { validateNameOrSurname } from "../../services/ValidationService";
-import { updateUser } from "../../services/RESTservice";
 
 export function UpdateUser() {
 

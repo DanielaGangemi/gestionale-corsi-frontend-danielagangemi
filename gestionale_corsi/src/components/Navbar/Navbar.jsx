@@ -76,6 +76,7 @@ export function Navbar() {
                                     <ul className="dropdown-menu">
                                         <li><Link className="dropdown-item" to="courses/1">I miei corsi</Link></li>
                                         <li><Link className="dropdown-item" to="courses/2">Visualizza tutti i corsi</Link></li>
+                                        <li><Link className="dropdown-item" to="addcourse">Inserisci un corso</Link></li>
 
                                     </ul>
                                 </li>

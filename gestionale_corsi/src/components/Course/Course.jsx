@@ -13,12 +13,12 @@ export function Course() {
     useEffect(() => {
 
         async function fetchData() {
-            console.log("dentro fetch data")
+
             try {
                 const coursesData = await getCourse(id);
-                console.log("coursesData")
-                console.log(coursesData)
+
                 setCourse(coursesData);
+
             } catch (error) {
                 console.error("Error fetching courses:", error);
             }
@@ -36,7 +36,7 @@ export function Course() {
                 <div className={courseStyle.title}>
                     <h1>{course.courseName}</h1>
                 </div>
-                <p>Durata: {course.duration} mesi</p>
+                <p>Durata: {course.duration} ore</p>
                 <h5>{course.shortDescrition}</h5>
                 <p>{course.longDescription}</p>
             </div>

@@ -24,8 +24,6 @@ export async function login(body) {
 // REGISTRATION
 export async function registration(body) {
 
-    console.log(body)
-    console.log(JSON.stringify(body))
 
     const response = await fetch("http://localhost:8080/api/user/registration", {
         mode: "cors",
@@ -168,6 +166,7 @@ export async function listCourses() {
 
 }
 
+// GET COURSE BY ID
 export async function getCourse(id) {
 
 
@@ -190,6 +189,50 @@ export async function getCourse(id) {
     }
 
     // console.log(await response.json())
+
+    return await response.json();
+
+}
+
+// INSERT COURSE
+export async function insertCourse(body) {
+
+    const token = getTokenCookie();
+
+    const response = await fetch("http://localhost:8080/api/course", {
+        mode: "cors",
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(body)
+    })
+
+    console.log(response.status)
+
+    if (response.status !== 200) {
+        return 0;
+    }
+
+    return 1;
+
+}
+
+
+
+// ---- CATEGORIES ----
+export async function getCategories() {
+
+    const response = await fetch("http://localhost:8080/api/category", {
+        mode: "cors",
+        method: "GET",
+
+    })
+
+    if (response.status != 200) {
+        return 0; // internal server error
+    }
 
     return await response.json();
 
