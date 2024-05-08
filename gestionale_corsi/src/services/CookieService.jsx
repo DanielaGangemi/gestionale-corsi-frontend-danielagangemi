@@ -6,18 +6,17 @@ export function setLoginCookie(jwtToken) {
 
     const { token, ttl, tokenCreationTime } = jwtToken;
 
-    Cookies.set("token", token);
-    Cookies.set("ttl", ttl);
-    Cookies.set("tokenCreationTime", tokenCreationTime)
+    const expire = new Date(ttl);
 
-    setClaimCookie(token)
+    Cookies.set("token", token, { expires: expire })
+
+    return jwtDecode(token)
 
 }
 
 export function setClaimCookie(token) {
 
-    console.log(jwtDecode(token));
-    const { name, surname, email, roles } = jwtDecode(token);
+    const { name, surname, email, roles } = token;
 
     Cookies.set("name", name);
     Cookies.set("surname", surname);
