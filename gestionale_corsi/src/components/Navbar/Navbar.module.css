@@ -1,3 +1,4 @@
 .background{
-    background-color: #1c0099!important;
+    /* background-color: #1c0099!important; */
+    background-image: linear-gradient(blue, #00d8ff);
 }
