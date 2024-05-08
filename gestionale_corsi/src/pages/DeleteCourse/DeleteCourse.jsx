@@ -63,7 +63,6 @@ export function DeleteCourse() {
 
             } else {
 
-                alert("Operazione riuscita")
                 navigateTo("/home/courses/2")
 
             }
@@ -78,8 +77,6 @@ export function DeleteCourse() {
 
     return (
         <>
-
-            {JSON.stringify(course)}
 
             <div className="row" style={{ marginTop: "10rem" }}>
                 <div className="col-md-7 mx-auto">

@@ -79,7 +79,7 @@ export function Courses() {
             <div className="container">
                 <div className="row">
                     {courses.map((course, index) => (
-                        <div className="col d-flex flex-column justify-content-center align-items-center">
+                        <div className="col-6 d-flex flex-column justify-content-center align-items-center">
 
                             <Card key={index} IdCorso={course.id} NomeCorso={course.courseName} Durata={course.duration} DescrizioneBreve={course.shortDescription} DescrizioneCompleta={course.longDescription}></Card>
                         </div>
