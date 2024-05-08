@@ -1,3 +1,4 @@
+import { getTokenCookie } from "./CookieService";
 // ---- USER ENDPOINTS ----
 
 // LOGIN
@@ -37,6 +38,27 @@ export async function registration(body) {
 
     if (response.status !== 200) {
         return 0;
+    }
+
+    return 1;
+
+}
+
+// LOGOUT
+export async function logout() {
+
+    const token = getTokenCookie();
+
+    const response = await fetch("http://localhost:8080/api/user/logout", {
+        mode: "cors",
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + token
+        }
+    })
+
+    if (response.status != 200) {
+        return 0; // internal server error
     }
 
     return 1;
