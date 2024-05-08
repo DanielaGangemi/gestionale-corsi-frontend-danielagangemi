@@ -83,6 +83,23 @@ export async function getUserByEmail(email) {
 
 }
 
+// FIND ALL
+export async function getAllUsers() {
+
+
+    const response = await fetch("http://localhost:8080/api/user/all", {
+        mode: "cors",
+        method: "GET",
+
+    })
+
+    if (response.status != 200) {
+        return 1;
+    }
+
+    return await response.json();
+
+}
 
 // ------ CORSI -------
 

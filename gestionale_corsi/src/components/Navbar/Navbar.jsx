@@ -64,8 +64,8 @@ export function Navbar() {
                                         Utenti
                                     </a>
                                     <ul className="dropdown-menu">
-                                        <li><Link className="dropdown-item" to="">Profilo</Link></li>
-                                        <li><Link className="dropdown-item" to="">Visualizza tutti gli utenti</Link></li>
+                                        <li><Link className="dropdown-item" to="profile">Profilo</Link></li>
+                                        <li><Link className="dropdown-item" to="users">Visualizza tutti gli utenti</Link></li>
 
                                     </ul>
                                 </li>

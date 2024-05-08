@@ -13,6 +13,8 @@ import { Login } from "./pages/Login/Login"
 import { Registration } from "./pages/Registration/Registration"
 import { AuthContextProvider } from "./context/AuthContext/AuthContextProvider"
 import { ProtectedRoute } from "./components/ProtectedRoute"
+import { Users } from "./pages/Users/Users"
+import { Profile } from "./pages/Profile/Profile"
 
 
 
@@ -45,6 +47,16 @@ const router = createBrowserRouter([
             element: <ProtectedRoute><Course /></ProtectedRoute>
           }
         ]
+      },
+      {
+        path: "users",
+        element: <ProtectedRoute><Users /></ProtectedRoute>
+
+      },
+      {
+        path: "profile",
+        element: <ProtectedRoute><Profile /></ProtectedRoute>
+
       },
     ]
 

@@ -69,7 +69,7 @@ export function Courses() {
         // findAll();
         // findPersonalList()
 
-    }, [])
+    }, [id])
 
 
 
