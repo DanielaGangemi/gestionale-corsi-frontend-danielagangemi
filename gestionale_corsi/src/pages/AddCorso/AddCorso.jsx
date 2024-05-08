@@ -99,14 +99,17 @@ export function AddCorso() {
         <>
 
 
-            <div className="row" style={{ marginTop: "10rem" }}>
+            <div className="row" style={{ marginTop: "5rem" }}>
                 <div className="col-md-7 mx-auto">
 
                     <div className="card">
-                        <div className="card-header">
-                            <h1>Aggiungi corso</h1>
-                        </div>
+
                         <div className="card-body">
+
+                            <div className="card-title">
+                                <h1 style={{ color: "blue" }}>Aggiungi corso</h1>
+
+                            </div>
 
                             <form onSubmit={handleSubmit}>
 

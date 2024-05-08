@@ -54,12 +54,12 @@ export function DeleteUser() {
                 <div className="col-md-7 mx-auto">
 
                     <div className="card">
-                        <div className="card-header">
-                            <h1>Cancellazione utente</h1>
-                        </div>
+                        
                         <div className="card-body">
 
-                            <p>Vuoi cancellare l'account {email} ?</p>
+                        <div className="card-title"> <h1 style={{color: "blue"}}>Cancellazione "{email}"</h1> </div>
+
+                            <p>Sei sicuro di voler cancellare {email} ?</p>
 
                         </div>
                         <div className="card-footer d-flex justify-content-end">

@@ -88,7 +88,7 @@ export function DeleteCourse() {
                         
                         <div className="card-body">
 
-                            <div className="card-title"> <h1>Cancellazione "{course.courseName}"</h1> </div>
+                            <div className="card-title"> <h1 style={{color: "blue"}}>Cancellazione "{course.courseName}"</h1> </div>
 
                             <p>Sicuro di voler cancellare <span style={{ fontWeight: "700" }}>{course.courseName}</span>?</p>
 

@@ -28,7 +28,7 @@ export function Card(props) {
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
-                            <h5 className="card-title"><h2 className="card-title">{props.NomeCorso}</h2></h5>
+                            <h5 className="card-title"><h2 className="card-title" style={{color: "blue"}}>{props.NomeCorso}</h2></h5>
                             <h6 className="card-subtitle mb-2 text-body-secondary">Durata: {props.Durata} ore</h6>
                             <h6 className="card-subtitle mb-2 text-body-secondary">{props.DescrizioneBreve}</h6>
                             {/* <p className="card-text">{props.DescrizioneCompleta}</p> */}
