@@ -4,7 +4,7 @@ import { login } from "../../services/RESTservice";
 import { validateEmail, validatePassword } from "../../services/ValidationService";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { setLoginCookie } from "../../services/CookieService";
+import { setLoginCookie, setClaimCookie } from "../../services/CookieService";
 
 export function LoginForm() {
 
@@ -55,10 +55,11 @@ export function LoginForm() {
             } else {
                
                 // salviamo il token nel cookie
-                // console.log(response.token)
-                // document.cookie = JSON.stringify(response);
-                setLoginCookie(response)
-                // navigateTo("/home")
+                let decodedToken = setLoginCookie(response)
+                setClaimCookie(decodedToken);
+
+                // vai alla Home
+                navigateTo("/home")
 
             }
 
