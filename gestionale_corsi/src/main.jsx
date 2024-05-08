@@ -11,6 +11,8 @@ import { Layout } from "./components/Layouts/MainLayout/Layout";
 import { Course } from "./components/Course/Course";
 import { Login } from "./pages/Login/Login"
 import { Registration } from "./pages/Registration/Registration"
+import { AuthContextProvider } from "./context/AuthContext/AuthContextProvider"
+import { ProtectedRoute } from "./components/ProtectedRoute"
 
 
 
@@ -24,24 +26,24 @@ const router = createBrowserRouter([
     element: <Registration />
   },
   {
-    element: <Layout />,
+    element: <AuthContextProvider><Layout /></AuthContextProvider>,
     path: "/home",
     children: [
       {
         path: "",
-        element: <Home />
+        element: <ProtectedRoute><Home /></ProtectedRoute>
       },
       {
         path: "courses/",
         children: [
           {
             path: "",
-            element: <Courses />
+            element: <ProtectedRoute><Courses /></ProtectedRoute>
           },
           {
             path: "course/:id",
-            element: <Course />
-          },
+            element: <ProtectedRoute><Course /></ProtectedRoute>
+          }
         ]
       },
     ]
