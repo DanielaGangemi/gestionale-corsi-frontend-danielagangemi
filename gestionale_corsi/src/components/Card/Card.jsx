@@ -1,7 +1,20 @@
 import cardStyle from "./Card.module.css"
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext/AuthContext";
+import { useContext } from "react";
 
 export function Card(props) {
+
+    const { user } = useContext(AuthContext);
+    let rolesList = [];
+
+    // console.log(user)
+
+    if (user.roles != undefined) {
+
+        rolesList = user.roles.split(",")
+
+    }
 
     return (
 
@@ -20,14 +33,16 @@ export function Card(props) {
 
 
                 </div>
-                <div className={`card-footer ${cardStyle.alignButton}`}>
-                    <button className={`btn ${cardStyle.backgroundButton}`} value="Visualizza">
-                        <NavLink className="nav-link" to={`./course/${props.IdCorso}`} >
-                            Visualizza dettagli
+                {!rolesList.includes("Admin") ? <></> :
+                    <div className={`card-footer ${cardStyle.alignButton}`}>
+                        <button className={`btn ${cardStyle.backgroundButton}`} value="Visualizza">
+                            <NavLink className="nav-link" to={`./course/${props.IdCorso}`} >
+                                Visualizza dettagli
 
-                        </NavLink>
-                    </button>
-                </div>
+                            </NavLink>
+                        </button>
+                    </div>
+                }
             </div>
 
         </>

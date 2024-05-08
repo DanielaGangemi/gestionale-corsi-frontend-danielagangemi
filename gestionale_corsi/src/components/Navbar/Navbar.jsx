@@ -83,8 +83,8 @@ export function Navbar() {
 
                         {!rolesList.includes("Admin") && rolesList.includes("Docente") ?
                             <div className="navbar-nav">
-                                <Link className="nav-link" to="courses" >Profilo</Link>
-                                <Link className="nav-link" to="courses" >Corsi</Link>
+                                <Link className="nav-link" to="profile" >Profilo</Link>
+                                <Link className="nav-link" to="courses/1" >Corsi</Link>
                             </div>
                             : <></>}
 
