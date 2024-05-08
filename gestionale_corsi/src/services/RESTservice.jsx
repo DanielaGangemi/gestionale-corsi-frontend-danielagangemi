@@ -136,7 +136,7 @@ export async function deleteUser(email) {
 
     }
 
-    return 0;
+    return 1;
 
 
 }

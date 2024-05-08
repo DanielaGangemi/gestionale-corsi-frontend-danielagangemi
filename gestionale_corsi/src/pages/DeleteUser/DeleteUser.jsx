@@ -1,11 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { deleteUser } from "../../services/RESTservice";
+import { useState } from "react";
+import deleteUserStyle from "./DeleteUser.module.css"
 
 export function DeleteUser() {
 
     const { email } = useParams();
     const navigateTo = useNavigate();
+    const [errorFlag, setErrorFlag] = useState(false)
 
     console.log(email);
 
@@ -17,7 +20,6 @@ export function DeleteUser() {
 
     const handleAccetp = async (event) => {
 
-        // navigateTo("/home/users")
         event.preventDefault();
 
         try {
@@ -26,11 +28,10 @@ export function DeleteUser() {
 
             if (response == 1) {
 
-                alert("Impossibile cancellare")
+                setErrorFlag(true)
 
             } else {
 
-                alert("Operazione riuscita")
                 navigateTo("/home/users")
 
             }
@@ -66,6 +67,8 @@ export function DeleteUser() {
                             <button type="button" className="btn btn-primary" onClick={handleAccetp}>Si</button>
                         </div>
                     </div>
+
+                    {errorFlag == true ? <div className={deleteUserStyle.errorMessage}><p>Errore durante la cancellazione dell'utente</p></div> : ""}
                 </div>
             </div>
         </>

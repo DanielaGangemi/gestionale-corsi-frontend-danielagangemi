@@ -3,6 +3,7 @@ import { getCourse } from "../../services/RESTservice";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { deleteCourse } from "../../services/RESTservice";
+import deleteCourseStyle from "./DeleteCourse.module.css"
 
 
 export function DeleteCourse() {
@@ -10,6 +11,7 @@ export function DeleteCourse() {
     const [course, setCourse] = useState({});
     const { id } = useParams();
     const navigateTo = useNavigate();
+    const [errorFlag, setErrorFlag] = useState(false)
 
     useEffect(() => {
 
@@ -23,7 +25,7 @@ export function DeleteCourse() {
 
                 if (response == 1 || response == 0) {
 
-                    alert("Errore")
+                    setErrorFlag(true)
 
                 } else {
 
@@ -59,7 +61,8 @@ export function DeleteCourse() {
 
             if (response == 1) {
 
-                alert("Impossibile cancellare")
+                // alert("Impossibile cancellare")
+                setErrorFlag(true)
 
             } else {
 
@@ -82,21 +85,27 @@ export function DeleteCourse() {
                 <div className="col-md-7 mx-auto">
 
                     <div className="card">
-                        <div className="card-header">
-                            <h1>Cancellazione corso</h1>
-                        </div>
+                        
                         <div className="card-body">
 
-                            <p>Vuoi cancellare il corso <span style={{ fontWeight: "700" }}>{course.courseName}</span>?</p>
+                            <div className="card-title"> <h1>Cancellazione "{course.courseName}"</h1> </div>
+
+                            <p>Sicuro di voler cancellare <span style={{ fontWeight: "700" }}>{course.courseName}</span>?</p>
 
                         </div>
                         <div className="card-footer d-flex justify-content-end">
                             <button type="button" className="btn btn-danger" style={{ marginRight: "1rem" }} onClick={handleReject}>No</button>
                             <button type="button" className="btn btn-primary" onClick={handleAccetp}>Si</button>
                         </div>
+
+
                     </div>
+
+                    {errorFlag == true ? <div className={deleteCourseStyle.errorMessage}><p>Errore durante la cancellazione del corso</p></div> : ""}
+
                 </div>
             </div>
+
 
         </>
     );
